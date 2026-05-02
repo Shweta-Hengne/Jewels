@@ -12,10 +12,34 @@
 body{
     background-color: #f8f9fa;
 }
+
+/* CARD HOVER EFFECT */
+.card{
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .card:hover{
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* IMAGE ZOOM EFFECT */
+.card img{
     transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card:hover img{
+    transform: scale(1.1);
+}
+
+/* SMALL GREY BUTTON */
+.buy-btn{
+    margin-top: 8px;
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 6px;
 }
 </style>
 
@@ -23,7 +47,6 @@ body{
 
 <body>
 
-<!-- HEADER -->
 <div class="container mt-5">
     <h1 class="text-center mb-4">Necklace Collection</h1>
 
@@ -32,11 +55,12 @@ body{
         <!-- CARD 1 -->
         <div class="col-md-3 mb-4">
             <div class="card">
-                <img src="images/n2.avif" class="card-img-top">
+                <img src="images/n1.avif" class="card-img-top">
                 <div class="card-body">
-                    <h5>Gold Chain</h5>
-                    <p>Simple and elegant daily wear necklace.</p>
+                    <h5>Silver Pendant</h5>
+                    <p>Elegant and minimal daily wear.</p>
                     <h6>₹499</h6>
+                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -44,11 +68,12 @@ body{
         <!-- CARD 2 -->
         <div class="col-md-3 mb-4">
             <div class="card">
-                <img src="images/n1.avif" class="card-img-top">
+                <img src="images/n2.avif" class="card-img-top">
                 <div class="card-body">
-                    <h5>Pearl Necklace</h5>
-                    <p>Classic pearl design for graceful look.</p>
+                    <h5>Gold Chain</h5>
+                    <p>Stylish layered design.</p>
                     <h6>₹799</h6>
+                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -56,11 +81,12 @@ body{
         <!-- CARD 3 -->
         <div class="col-md-3 mb-4">
             <div class="card">
-                <img src="images/n3.avif" class="card-img-top">
+                <img src="images/n5.avif" class="card-img-top">
                 <div class="card-body">
-                    <h5>Diamond Style</h5>
-                    <p>Shiny necklace for party wear.</p>
+                    <h5>GemStone Pendant</h5>
+                    <p>Colourful & elegant charm.</p>
                     <h6>₹999</h6>
+                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -68,11 +94,12 @@ body{
         <!-- CARD 4 -->
         <div class="col-md-3 mb-4">
             <div class="card">
-                <img src="images/n4.avif" class="card-img-top">
+                <img src="images/n10.avif" class="card-img-top">
                 <div class="card-body">
-                    <h5>Choker Necklace</h5>
-                    <p>Trendy choker for modern outfits.</p>
+                    <h5>Gold Chain set</h5>
+                    <p>Sleek and trendy style.</p>
                     <h6>₹599</h6>
+                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -85,6 +112,7 @@ body{
                     <h5>Temple Necklace</h5>
                     <p>Traditional design for festive wear.</p>
                     <h6>₹1200</h6>
+                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -94,9 +122,10 @@ body{
             <div class="card">
                 <img src="images/n6.avif" class="card-img-top">
                 <div class="card-body">
-                    <h5>Layered Necklace</h5>
-                    <p>Stylish multi-layer design.</p>
+                    <h5>Layered Diamond Set</h5>
+                    <p>Luxury multi-layer design.</p>
                     <h6>₹850</h6>
+                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -106,9 +135,10 @@ body{
             <div class="card">
                 <img src="images/n7.avif" class="card-img-top">
                 <div class="card-body">
-                    <h5>Heart Pendant</h5>
-                    <p>Romantic necklace with heart charm.</p>
+                    <h5>Pearl Necklace Set</h5>
+                    <p>Classic and timeless style.</p>
                     <h6>₹450</h6>
+                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -118,9 +148,10 @@ body{
             <div class="card">
                 <img src="images/n8.avif" class="card-img-top">
                 <div class="card-body">
-                    <h5>Silver Chain</h5>
-                    <p>Minimal design for everyday use.</p>
+                    <h5>Vintage Pearl Layers</h5>
+                    <p>Elegant retro look.</p>
                     <h6>₹350</h6>
+                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -130,9 +161,10 @@ body{
             <div class="card">
                 <img src="images/n9.avif" class="card-img-top">
                 <div class="card-body">
-                    <h5>Floral Necklace</h5>
-                    <p>Beautiful floral pattern design.</p>
+                    <h5>Pearl Necklace</h5>
+                    <p>Elegant classic style.</p>
                     <h6>₹700</h6>
+                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -140,17 +172,39 @@ body{
         <!-- CARD 10 -->
         <div class="col-md-3 mb-4">
             <div class="card">
-                <img src="images/n10.avif" class="card-img-top">
+                <img src="images/n11.avif" class="card-img-top">
                 <div class="card-body">
                     <h5>Luxury Necklace</h5>
-                    <p>Premium look for special occasions.</p>
+                    <p>Bold party piece.</p>
                     <h6>₹1500</h6>
+                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                 </div>
             </div>
         </div>
 
     </div>
 </div>
+
+<!-- JS -->
+<script>
+function buyNow(btn){
+
+    // Disable button
+    btn.disabled = true;
+
+    // Show loading
+    btn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Loading`;
+
+    // After 2 seconds
+    setTimeout(() => {
+        btn.innerHTML = "✔ Added";
+        btn.classList.remove("btn-secondary");
+        btn.classList.add("btn-success");
+
+        alert("🛒 Product added to cart!");
+    }, 2000);
+}
+</script>
 
 </body>
 </html>
