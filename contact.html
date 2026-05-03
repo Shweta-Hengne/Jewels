@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Necklaces</title>
+<title>Contact Us</title>
 
-<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 <style>
-
-    .footer {
+     
+  .footer {
             background-image: url(images/imple\ ink.png);
             height: 400px;
             background-size: cover;
@@ -77,43 +76,92 @@
             margin-left: 220px;
         }
 body{
-    background-color: #f8f9fa;
+    background: #f8f9fa;
 }
 
-/* CARD HOVER EFFECT */
-.card{
-    transition: all 0.3s ease;
-    border-radius: 10px;
+/* CARD */
+.contact-card{
+    max-width: 900px;
+    margin: 60px auto;
+    border-radius: 12px;
     overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
 }
 
-.card:hover{
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+/* CARD HOVER */
+.contact-card:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-/* IMAGE ZOOM EFFECT */
-.card img{
-    transition: 0.3s;
+/* IMAGE */
+.img-container{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
 }
 
-.card:hover img{
+.form-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+/* IMAGE ZOOM */
+.img-container:hover .form-img{
     transform: scale(1.1);
 }
 
-/* SMALL GREY BUTTON */
-.buy-btn{
-    margin-top: 8px;
-    padding: 5px 12px;
-    font-size: 14px;
-    border-radius: 6px;
+/* DARK OVERLAY */
+.img-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.img-container:hover .img-overlay{
+    opacity: 1;
+}
+
+/* FORM */
+.form-body{
+    padding: 25px;
+    transition: 0.3s;
+}
+
+/* INPUT FOCUS */
+.form-control:focus, .form-select:focus{
+    border-color: gold;
+    box-shadow: 0 0 8px rgba(255,215,0,0.5);
+}
+
+/* BUTTON */
+.submit-btn{
+    background-color: gold;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+.submit-btn:hover{
+    background-color: #d4af37;
+    transform: scale(1.05);
 }
 </style>
 
 </head>
 
 <header>
-    <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary mb-5">
   <div class="container">
     <a class="navbar-brand ms-5 fs-2 fw-semibold text-secondary" href="home.html">Jewels</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -174,171 +222,110 @@ body{
 </div>
 </nav>
 </header>
-<h1>necklace</h1>
-<img src="images/Rings collection (1).png" width="1400px" height="450px" class="me-0" alt="Necklace Collection Banner">
-<section class="mt-5 mb-5">
+<body>
+<h1>contact page</h1>
+<div class="container">
+    <div class="contact-card">
+        <div class="row g-0">
 
-<div class="container mt-5">
-    
-    <h1 class="text-center mb-4">Necklace Collection</h1>
-
-    <div class="row">
-
-        <!-- CARD 1 -->
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="images/n1.avif" class="card-img-top">
-                <div class="card-body">
-                    <h5>Silver Pendant</h5>
-                    <p>Elegant and minimal daily wear.</p>
-                    <h6>₹499</h6>
-                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
+            <!-- LEFT IMAGE -->
+            <div class="col-md-5">
+                <div class="img-container">
+                    <img src="images/neck.avif" class="form-img">
+                    <div class="img-overlay"></div>
                 </div>
             </div>
-        </div>
 
-        <!-- CARD 2 -->
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="images/n2.avif" class="card-img-top">
-                <div class="card-body">
-                    <h5>Gold Chain</h5>
-                    <p>Stylish layered design.</p>
-                    <h6>₹799</h6>
-                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
+            <!-- RIGHT FORM -->
+            <div class="col-md-7">
+                <div class="form-body">
+
+                    <h3 class="text-center mb-4">Contact Us</h3>
+
+                    <form onsubmit="handleSubmit(event)">
+
+                        <!-- NAME -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Name</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="First Name" required>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email</label>
+                            <input type="email" class="form-control" placeholder="Enter email" required>
+                        </div>
+
+                        <!-- HELP -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Help Regarding</label>
+                            <select class="form-select" required>
+                                <option value="">Select topic</option>
+                                <option>Order Issue</option>
+                                <option>Product Inquiry</option>
+                                <option>Payment Problem</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- MESSAGE -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Message</label>
+                            <textarea class="form-control" rows="4" placeholder="Write your message..." required></textarea>
+                        </div>
+
+                        <!-- SUBMIT -->
+                        <div class="text-center">
+                            <button type="submit" class="btn submit-btn px-4">Submit</button>
+                        </div>
+
+                    </form>
+
                 </div>
             </div>
-        </div>
 
-        <!-- CARD 3 -->
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="images/n5.avif" class="card-img-top">
-                <div class="card-body">
-                    <h5>GemStone Pendant</h5>
-                    <p>Colourful & elegant charm.</p>
-                    <h6>₹999</h6>
-                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
-                </div>
-            </div>
         </div>
-
-        <!-- CARD 4 -->
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="images/n10.avif" class="card-img-top">
-                <div class="card-body">
-                    <h5>Gold Chain set</h5>
-                    <p>Sleek and trendy style.</p>
-                    <h6>₹599</h6>
-                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- CARD 5 -->
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="images/n5.avif" class="card-img-top">
-                <div class="card-body">
-                    <h5>Temple Necklace</h5>
-                    <p>Traditional design for festive wear.</p>
-                    <h6>₹1200</h6>
-                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- CARD 6 -->
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="images/n6.avif" class="card-img-top">
-                <div class="card-body">
-                    <h5>Layered Diamond Set</h5>
-                    <p>Luxury multi-layer design.</p>
-                    <h6>₹850</h6>
-                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- CARD 7 -->
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="images/n7.avif" class="card-img-top">
-                <div class="card-body">
-                    <h5>Pearl Necklace Set</h5>
-                    <p>Classic and timeless style.</p>
-                    <h6>₹450</h6>
-                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- CARD 8 -->
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="images/n8.avif" class="card-img-top">
-                <div class="card-body">
-                    <h5>Vintage Pearl Layers</h5>
-                    <p>Elegant retro look.</p>
-                    <h6>₹350</h6>
-                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- CARD 9 -->
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="images/n9.avif" class="card-img-top">
-                <div class="card-body">
-                    <h5>Pearl Necklace</h5>
-                    <p>Elegant classic style.</p>
-                    <h6>₹700</h6>
-                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- CARD 10 -->
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="images/n11.avif" class="card-img-top">
-                <div class="card-body">
-                    <h5>Luxury Necklace</h5>
-                    <p>Bold party piece.</p>
-                    <h6>₹1500</h6>
-                    <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
-</section>
-<body>
-<!-- JS -->
+
+
+
 <script>
-function buyNow(btn){
+function handleSubmit(event){
+    event.preventDefault();
+    alert("✅ Your message has been submitted!");
+    event.target.reset();
 
-    // Disable button
-    btn.disabled = true;
-
-    // Show loading
-    btn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Loading`;
-
-    // After 2 seconds
-    setTimeout(() => {
-        btn.innerHTML = "✔ Added";
-        btn.classList.remove("btn-secondary");
-        btn.classList.add("btn-success");
-
-        alert("🛒 Product added to cart!");
-    }, 2000);
 }
 </script>
+<script>
+function startVoiceSearch() {
+    if (!('webkitSpeechRecognition' in window)) {
+        alert("Voice search not supported in your browser");
+        return;
+    }
 
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = "en-IN";
+    recognition.start();
+
+    recognition.onresult = function(event) {
+        const text = event.results[0][0].transcript;
+        document.getElementById("searchInput").value = text;
+    };
+
+    recognition.onerror = function() {
+        alert("Voice recognition error");
+    };
+}
+</script>
 <footer class="footer">
     <div class="container-fluid">
         <div class="row">
@@ -390,7 +377,6 @@ function buyNow(btn){
 <!-- Add Bootstrap JS and FontAwesome for Social Icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
