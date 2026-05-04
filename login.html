@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Jewels</title>
+
+<!-- Bootstrap -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+/* Background */
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('images/jewelry-bg.jpg') center/cover no-repeat;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    backdrop-filter: blur(10px);
+}
+
+/* Center container */
+.overlay {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glass card */
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.form-control:focus {
+    border-color: #c9a96e;
+    box-shadow: 0 0 5px rgba(201,169,110,0.6);
+}
+
+/* Button */
+.btn-secondary {
+    background: linear-gradient(45deg, #c9a96e, #a67c00);
+    border: none;
+    font-weight: bold;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #a67c00, #c9a96e);
+}
+
+/* Social icons */
+.bi {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bi:hover {
+    transform: scale(1.3);
+    color: #c9a96e;
+}
+
+/* Links */
+a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg fixed-top bg-light">
+  <div class="container">
+    <a class="navbar-brand fs-3 fw-semibold text-secondary" href="index.html">Jewels</a>
+
+```
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+  <ul class="navbar-nav me-auto">
+    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+  </ul>
+
+  <!-- Icons -->
+  <a href="login.html" class="fs-4 text-dark me-3">
+    <i class="bi bi-person"></i>
+  </a>
+  <a href="#" class="fs-4 text-dark">
+    <i class="bi bi-cart"></i>
+  </a>
+</div>
+```
+
+  </div>
+</nav>
+
+<!-- LOGIN SECTION -->
+
+<div class="overlay">
+
+```
+<div class="login-card">
+
+    <h2 class="text-center mb-4">Login</h2>
+
+    <form>
+        <!-- Email -->
+        <div class="mb-3">
+            <label class="fw-bold">Email</label>
+            <input type="email" class="form-control" placeholder="Enter email" required>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3 position-relative">
+            <label class="fw-bold">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Enter password" required>
+            <i class="bi bi-eye position-absolute"
+               style="top: 40px; right: 15px;"
+               onclick="togglePassword()"></i>
+        </div>
+
+        <!-- Options -->
+        <div class="d-flex justify-content-between mb-3">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Forgot?</a>
+        </div>
+
+        <!-- Button -->
+        <button type="submit" class="btn btn-secondary w-100">Login</button>
+
+        <!-- Divider -->
+        <div class="text-center mt-3">or</div>
+
+        <!-- Social -->
+        <div class="text-center mt-3">
+            <i class="bi bi-google fs-4 me-3"></i>
+            <i class="bi bi-facebook fs-4 me-3"></i>
+            <i class="bi bi-twitter fs-4"></i>
+        </div>
+
+        <!-- Register -->
+        <div class="text-center mt-4">
+            <p>Don't have an account? <a href="#">Register</a></p>
+        </div>
+
+    </form>
+
+</div>
+```
+
+</div>
+
+<!-- JS -->
+
+<script>
+function togglePassword() {
+    let pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
