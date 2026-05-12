@@ -4,572 +4,533 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Jewels Store</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-<<<<<<< HEAD
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        rel="stylesheet">
+
     <style>
-        .footer {
-            background-image: url(images/imple\ ink.png);
-            height: 400px;
-            background-size: cover;
-            color: rgb(51, 50, 50);
-            padding: 40px 0;
-            margin-top: 160px;
-        }
-
-        .footer .footer-logo {
-            font-size: 40px;
-            color: #444242;
-            /* Gold color */
-        }
-
-        .footer .social-icons a {
-            color: rgb(49, 48, 48);
-            margin: 0 15px;
-            font-size: 28px;
-            text-decoration: none;
-        }
-
-        .footer .social-icons a:hover {
-            color: #080808;
-        }
-
-        .footer .contact-form input,
-        .footer .contact-form textarea {
-            border: 1px solid #2b2a2a;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-        .footer .quick-links ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-left: 200px;
-        }
-
-        .first {
-            margin-left: 200px;
-        }
-
-        .footer .quick-links ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer .quick-links ul li a {
-            color: rgb(54, 54, 54);
-            text-decoration: none;
-        }
-
-        .footer .quick-links ul li a:hover {
-            color: #0e0d0d;
-        }
-
-
-        .second {
-            margin-left: 220px;
-        }
-
-        .social-icons {
-            margin-left: 220px;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            /* Slightly lift the card */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            /* Darker, larger shadow on hover */
-        }
-
-        .pro {
-            margin-top: 80px;
-        }
-
-        .about {
-            margin-top: 100px;
-        }
-
-        .text {
-            margin-left: 170px;
-            margin-right: 170px;
-        }
-
         body {
-            background: var(--background-color);
-            display: grid;
-            place-items: center;
-            min-height: 100vh;
             margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
 
+        /* Navbar */
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Scroller */
         .scroller-container {
-            --slide-width: clamp(150px, 20vw, 300px);
-            --slide-gap: calc(var(--slide-width) * 0.06);
-            --slide-border-radius: calc(var(--slide-width) * 0.06);
+            --slide-width: 250px;
+            --slide-gap: 15px;
             overflow: hidden;
-            width: 100vw;
+            width: 100%;
             position: relative;
-
-            &::before {
-                position: absolute;
-                content: "";
-                width: var(--slide-width);
-                left: 0;
-                top: 0;
-                bottom: 0;
-                z-index: 1;
-                background: linear-gradient(90deg, var(--background-color), transparent);
-            }
-
-            &::after {
-                position: absolute;
-                content: "";
-                width: var(--slide-width);
-                right: 0;
-                top: 0;
-                bottom: 0;
-                z-index: 1;
-                background: linear-gradient(90deg, transparent, var(--background-color));
-            }
+            margin-top: 80px;
         }
 
         .scroller-wrapper {
             display: flex;
-            justify-content: flex-start;
             gap: var(--slide-gap);
-            width: calc((var(--slide-width) + var(--slide-gap)) * 6);
-            animation: moveLeft 30s linear infinite;
+            width: max-content;
+            animation: moveLeft 25s linear infinite;
         }
 
         .scroller-slide {
             flex: none;
             width: var(--slide-width);
-            aspect-ratio: 9/16;
-            background: #eee;
-            border-radius: var(--slide-border-radius);
+            height: 400px;
             overflow: hidden;
-            cursor: pointer;
+            border-radius: 15px;
+        }
+
+        .scroller-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         @keyframes moveLeft {
             from {
-                transform: translatex(0);
+                transform: translateX(0);
             }
 
             to {
-                transform: translatex(-100%);
+                transform: translateX(-50%);
             }
         }
 
-        img {
-            height: 100%;
+        /* Cards */
+        .card {
+            transition: 0.4s;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            height: 250px;
             object-fit: cover;
-            object-position: cover;
+        }
+
+        /* Sections */
+        .pro,
+        .about {
+            margin-top: 100px;
+        }
+
+        .text {
+            margin: 20px 150px;
+            text-align: justify;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f5f5f5;
+            padding: 50px 0;
+            margin-top: 100px;
+        }
+
+        .footer-logo {
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .quick-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .quick-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .quick-links ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .quick-links ul li a:hover {
+            color: black;
+        }
+
+        .social-icons a {
+            color: #333;
+            font-size: 25px;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: black;
         }
     </style>
 </head>
-=======
-   <link href ="style.css" rel="stylesheet">
-    
-</head> 
-<!-- Header starts here -->
->>>>>>> c225087dc8ed37003952e5f0a9225949009475ab
-<header>
-    <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
-        <div class="container">
-            <a class="navbar-brand ms-5 fs-2 fw-semibold text-secondary" href="index.html">Jewels</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active ms-5" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Shop
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+            <div class="container">
+
+                <a class="navbar-brand fs-2 fw-semibold text-secondary" href="#">
+                    Jewels
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-4">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">
+                                Shop
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="earrings.html">Earrings</a></li>
+                                <li><a class="dropdown-item" href="rings.html">Rings</a></li>
+                                <li><a class="dropdown-item" href="necklace.html">Necklaces</a></li>
+                                <li><a class="dropdown-item" href="bracelet.html">Bracelets</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="new-arrivals.html">New Arrivals</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+
+                    <!-- Search -->
+                    <form class="d-flex align-items-center">
+
+                        <div class="input-group">
+                            <input id="searchInput" class="form-control" type="search"
+                                placeholder="Search">
+
+                            <button class="btn btn-outline-secondary" type="button"
+                                onclick="startVoiceSearch()">
+                                <i class="bi bi-mic"></i>
+                            </button>
+
+                            <button class="btn btn-outline-success" type="submit">
+                                Search
+                            </button>
+                        </div>
+
+                        <!-- Icons -->
+                        <a href="login.html" class="ms-3 fs-4 text-dark">
+                            <i class="bi bi-person"></i>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="earrings.html">Earrings</a></li>
-                            <li><a class="dropdown-item" href="rings.html">Rings</a></li>
-                            <li><a class="dropdown-item" href="necklace.html">Necklaces</a></li>
-                            <li><a class="dropdown-item" href="bracelet.html">Bracelets</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="new-arrivals.html">New Arrivals</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact us</a>
-                    </li>
-                </ul>
-                <form class="d-flex  align-items-center">
-                    <div class="input-group">
-                        <input id="searchInput" class="form-control" type="search" placeholder="Search">
-                        <!-- MIC BUTTON -->
-                        <button class="btn btn-outline-secondary" type="button" onclick="startVoiceSearch()">
-                            <i class="bi bi-mic"></i>
-                        </button>
-                        <!-- SEARCH BUTTON -->
-                        <button class="btn btn-outline-success">Search</button>
+
+                        <a href="#" class="ms-3 fs-4 text-dark">
+                            <i class="bi bi-cart"></i>
+                        </a>
+
+                    </form>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Scroller -->
+        <section class="mt-5">
+
+            <div class="scroller-container">
+
+                <div class="scroller-wrapper">
+
+                    <div class="scroller-slide">
+                        <img src="images/n11.png" alt="">
                     </div>
-                    <!-- LOGIN ICON -->
-                    <a href="login.html" class="ms-3 fs-4 text-dark">
-                        <i class="bi bi-person"></i>
-                    </a>
-                    <!-- CART ICON -->
-                    <a href="#" class="ms-3 fs-4 text-dark">
-                        <i class="bi bi-cart"></i>
-                    </a>
-                </form>
-            </div>
-        </div>
-        </div>
-        </div>
-    </nav>
-</header>
-<!-- Header ends here -->
 
-<!-- body starts here -->
-<body>
-<main>
-<<<<<<< HEAD
-    <section class="mt-5">
-=======
-<section class="mt-5">
-         
->>>>>>> c225087dc8ed37003952e5f0a9225949009475ab
+                    <div class="scroller-slide">
+                        <img src="images/r11.png" alt="">
+                    </div>
 
+                    <div class="scroller-slide">
+                        <img src="images/b11.png" alt="">
+                    </div>
 
-        <div class="scroller-container">
-            <div class="scroller-wrapper">
-                <div class="scroller-slide">
-                    <img src="images/n11.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/r11.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/b11.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/e11.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/a1.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/a2.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/a3.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/a4.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/n11.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/r11.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/b11.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/e11.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/a1.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/a2.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/a3.png" />
-                </div>
-                <div class="scroller-slide">
-                    <img src="images/a4.png" />
+                    <div class="scroller-slide">
+                        <img src="images/e11.png" alt="">
+                    </div>
+
+                    <div class="scroller-slide">
+                        <img src="images/a1.png" alt="">
+                    </div>
+
+                    <div class="scroller-slide">
+                        <img src="images/a2.png" alt="">
+                    </div>
+
+                    <div class="scroller-slide">
+                        <img src="images/a3.png" alt="">
+                    </div>
+
+                    <div class="scroller-slide">
+                        <img src="images/a4.png" alt="">
+                    </div>
+
                 </div>
             </div>
-        </div>
-        <h2 class="mt-4 mb-5 fs-1 text-center">Welcome to Our Jewellery Store</h2>
-        <img src="images/G1 (1).png" class="d-block w-100 mt-5" alt="...">
 
-    </section>
-<!-- products section starts here -->
-    <section class="pro">
-        <h1 class="mt-5 mb-3 fs-1 text-center">Our Products</h1>
+            <h2 class="mt-4 mb-5 fs-1 text-center">
+                Welcome to Our Jewellery Store
+            </h2>
+
+            <img src="images/G1 (1).png" class="d-block w-100 mt-5" alt="">
+
+        </section>
+
+        <!-- Products -->
+        <section class="pro">
+
+            <h1 class="text-center mb-5">Our Products</h1>
+
+            <div class="container">
+
+                <div class="row g-4">
+
+                    <!-- Card 1 -->
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="images/neck.avif" class="card-img-top" alt="">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Elegant Necklace</h5>
+
+                                <a href="necklace.html"
+                                    class="btn btn-secondary">
+                                    Show More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="images/brac.avif" class="card-img-top" alt="">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Deluxe Bracelet</h5>
+
+                                <a href="bracelet.html"
+                                    class="btn btn-secondary">
+                                    Show More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="images/pear.avif" class="card-img-top" alt="">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Pearl Earrings</h5>
+
+                                <a href="earrings.html"
+                                    class="btn btn-secondary">
+                                    Show More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="images/pendant.avif" class="card-img-top" alt="">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Stunning Pendant</h5>
+
+                                <a href="necklace.html"
+                                    class="btn btn-secondary">
+                                    Show More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- About -->
+        <section class="about">
+
+            <h1 class="text-center">About Us</h1>
+
+            <p class="text">
+                Welcome to our jewellery store! We specialize in creating beautiful
+                and unique pieces that celebrate the art of fine jewellery.
+                We believe that jewelry is more than just an accessory —
+                it’s an expression of individuality and personal style.
+            </p>
+
+            <div class="text-center">
+                <a href="about.html" class="btn btn-danger">
+                    Read More
+                </a>
+            </div>
+
+            <img src="images/Untitled design (2).png"
+                class="d-block w-100 mt-5" alt="">
+
+        </section>
+
+        <!-- New Arrivals -->
+        <section class="about">
+
+            <h1 class="text-center mb-5">New Arrivals</h1>
+
+            <div class="container">
+
+                <div class="row g-4">
+
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="images/front.avif" class="card-img-top" alt="">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Elegant Necklace</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="images/front1.avif" class="card-img-top" alt="">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Drop Earrings</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="images/front2.avif" class="card-img-top" alt="">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Pearl Necklace</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="images/front3.avif" class="card-img-top" alt="">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Stunning Rings</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+
         <div class="container">
+
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="images/neck.avif" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Elegant Necklace</h5>
 
-<<<<<<< HEAD
-                            <a href="necklace.html">
-                                <button class="btn btn-secondary" href="necklace.html">Show more</button></a>
-=======
-                          </div>
-                        </div>
-                      </div>
->>>>>>> c225087dc8ed37003952e5f0a9225949009475ab
+                <!-- Footer Column 1 -->
+                <div class="col-lg-4 mb-4">
 
-
-                        </div>
+                    <div class="footer-logo">
+                        Jewels Store
                     </div>
+
+                    <p>Luxury Jewelry for Every Moment</p>
+
+                    <p>
+                        <strong>Address:</strong>
+                        Bengaluru, Karnataka
+                    </p>
+
+                    <p>
+                        <strong>Phone:</strong>
+                        +123 456 7890
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        info@jewelrystore.com
+                    </p>
+
                 </div>
 
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="images/brac.avif" class="card-img-top" alt="...">
-<<<<<<< HEAD
-                        <div class="card-body">
-                            <h5 class="card-title">Deluxe Bracelet</h5>
-=======
-                          <div class="card-body">
-                          <h5 class="card-title">Deluxe Bracelet</h5>
-                        
-                        <a href="bracelet.html">
-                            <button class="btn btn-secondary" href="bracelet.html">Show more</button></a>
-                          
-                          </div>
-                        </div>
-                      </div>
->>>>>>> c225087dc8ed37003952e5f0a9225949009475ab
+                <!-- Footer Column 2 -->
+                <div class="col-lg-4 mb-4 quick-links">
 
-                            <a href="bracelet.html">
-                                <button class="btn btn-secondary" href="bracelet.html">Show more</button></a>
+                    <h5>Quick Links</h5>
 
-                        </div>
-                    </div>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="necklace.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+
                 </div>
 
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="images/pear.avif" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">pearl Earrings</h5>
+                <!-- Footer Column 3 -->
+                <div class="col-lg-4 mb-4">
 
-<<<<<<< HEAD
-                            <a href="earrings.html">
-                                <button class="btn btn-secondary" href="earrings.html">Show more</button></a>
-=======
-                          </div>
-                        </div>
-                      </div>
->>>>>>> c225087dc8ed37003952e5f0a9225949009475ab
+                    <h5>Follow Us</h5>
 
+                    <div class="social-icons">
 
-                        </div>
+                        <a href="https://www.facebook.com">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="https://twitter.com">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="https://wa.me/7387775196">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+
                     </div>
+
                 </div>
 
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="images/pendant.avif" class="card-img-top" alt="...">
-<<<<<<< HEAD
-                        <div class="card-body">
-                            <h5 class="card-title">Stunning pendant</h5>
-
-                            <a href="necklace.html">
-                                <button class="btn btn-secondary" href="necklace.html">Show more</button></a>
-                        </div>
-                    </div>
-                </div>
             </div>
+
+            <div class="text-center mt-4">
+                <p>&copy; 2026 Jewelry Store | All Rights Reserved</p>
+            </div>
+
         </div>
-    </section>
-    <section class="about">
-        <h1 class=" text-center">About Us</h1>
-        <p class=" text ">Welcome to our jewellery store! We specialize in creating beautiful and unique pieces that
-            celebrate the art of fine jewellery. we believe that jewelry is more than just an accessory – it’s an
-            expression of individuality, a reflection of your personal style, and a testament to the moments that matter
-            most. Our passion for fine craftsmanship and attention to detail drives us to create pieces that are not
-            only beautiful but meaningful.
-=======
-                          <div class="card-body">
-                          <h5 class="card-title">Stunning pendant</h5>
-                         
-                          <a href="necklace.html">
-                            <button class="btn btn-secondary" href="necklace.html">Show more</button></a>
-                         
 
-                          </div>
-                        </div>
-                      </div>
-                </div>
-              </div> 
-   </section>  
-<!-- products section ends here -->
+    </footer>
 
-<!-- about us section starts here  -->
-    <section class="about">
-        <h1 class=" text-center">About Us</h1>
-        <p class=" text mt-4">Welcome to our jewellery store! We specialize in creating beautiful and unique pieces that celebrate the art of fine jewellery. we believe that jewelry is more than just an accessory – it’s an expression of individuality, a reflection of your personal style, and a testament to the moments that matter most. Our passion for fine craftsmanship and attention to detail drives us to create pieces that are not only beautiful but meaningful.  
->>>>>>> c225087dc8ed37003952e5f0a9225949009475ab
-            <a href="about.html">
-                <button class="text-danger" href="about.html">Read More</button></a>
-        </p>
-        <img src="images/Untitled design (2).png" class="d-block w-100 mt-5" alt="...">
-    </section>
-<<<<<<< HEAD
-=======
-<!-- about us section ends here   -->
-
-<!-- new arrivals section starts here -->
->>>>>>> c225087dc8ed37003952e5f0a9225949009475ab
-    <section class="about">
-        <h1 class="fs-1 text-center">New Arrivals</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="images/front.avif" class="card-img-top" alt="...">
-                        <div class="card-body">
-<<<<<<< HEAD
-                            <h5 class="card-title">Elegant Necklace</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="images/front1.avif" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Drop Earrings</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="images/front2.avif" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">pearl Necklace</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="images/front3.avif" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Stunning Rings</h5>
-                        </div>
-                    </div>
-=======
-                          <h5 class="card-title">Elegant Necklace</h5>
-                          
-                         
-                          </div>
-                        </div>
-                      </div>
-
-                          <div class="col-md-3">
-                    <div class="card">
-                        <img src="images/front1.avif" class="card-img-top" alt="...">
-                          <div class="card-body">
-                          <h5 class="card-title">Drop Earrings</h5>
-                    </div>
-                  </div>
-                </div>
-
-                          <div class="col-md-3">
-                    <div class="card">
-                        <img src="images/front2.avif" class="card-img-top" alt="...">
-                          <div class="card-body">
-                          <h5 class="card-title">pearl Necklace</h5>
-                          
-                  </div>
-                </div>
-              </div>
-
-                          <div class="col-md-3">
-                    <div class="card">
-                        <img src="images/front3.avif" class="card-img-top" alt="...">
-                          <div class="card-body">
-                          <h5 class="card-title">Stunning Rings</h5>
-                    </div>
-                  </div>
-                </div>
-                
-    </div>
-  </div> 
-   </section> 
-<!-- new arrivals section ends here -->             
-</main>
-   
-<!-- footer starts here -->
-
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Column 1: Logo and Store Info -->
-            <div class="col-lg-3 col-md-6 mb-4 ms-5">
-                <div class="footer-logo">Jewels Store</div>
-                <p>Luxury Jewelry for Every Moment</p>
-                <p><strong>Address:</strong> No 612, 80 Feet Rd, beside JB Marbles, 4th Block, Koramangala, Bengaluru, Karnataka 560034</p>
-                <p><strong>Phone:</strong> +123 456 7890</p>
-                <p><strong>Email:</strong> info@jewelrystore.com</p>
-            </div>
-
-            <!-- Column 2: Quick Links -->
-            <div class="col-lg-3 col-md-6 mb-4 ms-5 quick-links">
-                <h5 class="first">Quick Links</h5>
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="necklace.html">Shop</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="new-arrivals.html">New Arrivals</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Social Media Links -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="second">Follow Us</h5>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com" class="bi bi-facebook" target="_blank" title="Facebook"></a>
-                    <a href="https://twitter.com" class="bi bi-twitter" target="_blank" title="Twitter"></a>
-                    <a href="https://www.instagram.com" class="bi bi-instagram" target="_blank" title="Instagram"></a>
-                    <a href="https://wa.me/7387775196" class="bi bi-whatsapp" target="_blank" title="WhatsApp"></a>
-                    <a href="https://www.google.com/maps/place/Reliance+Jewels" class="bi bi-geo-alt-fill" target="_blank" title="Location"></a>
->>>>>>> c225087dc8ed37003952e5f0a9225949009475ab
-                </div>
-            </div>
-        </div>
-<<<<<<< HEAD
-    </section>
-</main>
-
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <!-- Voice Search -->
     <script>
+
         function startVoiceSearch() {
+
             if (!('webkitSpeechRecognition' in window)) {
                 alert("Voice search not supported in your browser");
                 return;
             }
 
             const recognition = new webkitSpeechRecognition();
+
             recognition.lang = "en-IN";
+
             recognition.start();
 
             recognition.onresult = function (event) {
+
                 const text = event.results[0][0].transcript;
+
                 document.getElementById("searchInput").value = text;
             };
 
@@ -577,91 +538,12 @@
                 alert("Voice recognition error");
             };
         }
+
     </script>
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <!-- Column 1: Logo and Store Info -->
-                <div class="col-lg-3 col-md-6 mb-4 ms-5">
-                    <div class="footer-logo">Jewels Store</div>
-                    <p>Luxury Jewelry for Every Moment</p>
-                    <p><strong>Address:</strong> No 612, 80 Feet Rd, beside JB Marbles, 4th Block, Koramangala,
-                        Bengaluru, Karnataka 560034</p>
-                    <p><strong>Phone:</strong> +123 456 7890</p>
-                    <p><strong>Email:</strong> info@jewelrystore.com</p>
-                </div>
-                <!-- Column 2: Quick Links -->
-                <div class="col-lg-3 col-md-6 mb-4 ms-5 quick-links">
-                    <h5 class="first">Quick Links</h5>
-                    <ul>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="necklace.html">Shop</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="new-arrivals.html">New Arrivals</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- Column 3: Social Media Links -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="second">Follow Us</h5>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com" class="bi bi-facebook" target="_blank" title="Facebook"></a>
-                        <a href="https://twitter.com" class="bi bi-twitter" target="_blank" title="Twitter"></a>
-                        <a href="https://www.instagram.com" class="bi bi-instagram" target="_blank"
-                            title="Instagram"></a>
-                        <a href="https://wa.me/7387775196" class="bi bi-whatsapp" target="_blank" title="WhatsApp"></a>
-                        <a href="https://www.google.com/maps/place/Reliance+Jewels" class="bi bi-geo-alt-fill"
-                            target="_blank" title="Location"></a>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer Bottom: Copyright -->
-            <div class="text-center mt-3">
-                <p>&copy; 2023 Jewelry Store | All Rights Reserved</p>
-            </div>
-        </div>
-    </footer>
-    <!-- Add Bootstrap JS and FontAwesome for Social Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
-=======
-    </div>
-</footer>
-<!-- footer ends here  -->
- 
-<script>
-function startVoiceSearch() {
-    if (!('webkitSpeechRecognition' in window)) {
-        alert("Voice search not supported in your browser");
-        return;
-    }
-
-    const recognition = new webkitSpeechRecognition();
-    recognition.lang = "en-IN";
-    recognition.start();
-
-    recognition.onresult = function(event) {
-        const text = event.results[0][0].transcript;
-        document.getElementById("searchInput").value = text;
-    };
-
-    recognition.onerror = function() {
-        alert("Voice recognition error");
-    };
-}
-</script>
-
-
-<!-- Add Bootstrap JS and FontAwesome for Social Icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  
-</body>
->>>>>>> c225087dc8ed37003952e5f0a9225949009475ab
 </html>
