@@ -8,101 +8,9 @@
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> 
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-    .card{
-    transition: all 0.3s ease;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.card:hover{
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-/* IMAGE ZOOM EFFECT */
-.card img{
-    transition: 0.3s;
-}
-
-.card:hover img{
-    transform: scale(1.1);
-}
-
-/* SMALL GREY BUTTON */
-.buy-btn{
-    margin-top: 8px;
-    padding: 5px 12px;
-    font-size: 14px;
-    border-radius: 6px;
-}
-    .footer {
-            background-image: url(images/imple\ ink.png);
-            height: 400px;
-            background-size: cover;
-            color: rgb(51, 50, 50);
-            padding: 40px 0;
-            margin-top: 160px;
-        }
-
-        .footer .footer-logo {
-            font-size: 40px;
-            color: #444242; /* Gold color */
-        }
-
-        .footer .social-icons a {
-            color: rgb(49, 48, 48);
-            margin: 0 15px;
-            font-size: 28px;
-            text-decoration: none;
-        }
-
-        .footer .social-icons a:hover {
-            color: #080808;
-        }
-
-        .footer .contact-form input,
-        .footer .contact-form textarea {
-            border: 1px solid #2b2a2a;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-        
-
-        .footer .quick-links ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-left: 200px;
-        }
-        .first{
-            margin-left: 200px;
-        }
-
-        .footer .quick-links ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer .quick-links ul li a {
-            color: rgb(54, 54, 54);
-            text-decoration: none;
-        }
-
-        .footer .quick-links ul li a:hover {
-            color: #0e0d0d;
-        }
-
-        
-        .second{
-            margin-left: 220px;
-        }
-        .social-icons{
-            margin-left: 220px;
-        }
-  </style>
+  <link href ="style.css" rel="stylesheet">
   </head>
+  <!-- header and navigation bar starts here -->
 <header>
     <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
   <div class="container">
@@ -165,8 +73,11 @@
 </div>
 </nav>
 </header>
+<!-- header and navigation bar ends here -->
 
-<main>
+<body>
+
+  <main>
     <section class="mt-5">
          <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -190,10 +101,12 @@
 
   </div>
 </div>
-    </section>
 
-     <section class="pro">
-        <h2 class="mt-5 mb-3 fs-1 text-center">Earrings Collection</h2>
+<h1 class="text-center mb-4">Earrings Collection</h1>
+
+    </section>
+     <!-- section 1 starts here -->
+      <section class="pro">
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-3">
@@ -206,7 +119,9 @@
                          <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                           
 
-                          </div></div></div>
+                          </div>
+                        </div>
+                      </div>
 
                           <div class="col-md-3">
                     <div class="card">
@@ -215,9 +130,11 @@
                           <h5 class="card-title">Gold Earring</h5>
                           <h6 class="card-title">Stunning piece of jewelry</h6>
                          <h6 class="card-title">Price: 199</h6>
-                        <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
+                       <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                           
-                          </div></div></div>
+                          </div>
+                        </div>
+                      </div>
 
                           <div class="col-md-3">
                     <div class="card">
@@ -230,7 +147,9 @@
                           <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                          
 
-                          </div></div></div>
+                          </div>
+                        </div>
+                      </div>
 
                           <div class="col-md-3">
                     <div class="card">
@@ -239,31 +158,35 @@
                           <h5 class="card-title">Rose Gold Earring</h5>
                           <h6 class="card-title">Stunning piece of jewelry</h6>
                           <h6 class="card-title">Price: 299</h6>
-                        <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
+                         <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                          
 
-                          </div></div></div>
-                
-                          
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div> 
+   </section> 
+      
+    <!-- section 1 ends here  -->
 
-   </div></div> 
-   </section>  
-
+    <!-- section 2 starts here -->
    <section class="pro">
-        
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-3">
                     <div class="card">
-                        <img src="images/ear13.avif" class="card-img-top" alt="...">
+                        <img src="images/ear5.avif" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Emerald Earring</h5>
-                          <h6 class="card-title">A stunning piece of gemstone</h6>
-                          <h6 class="card-title">Price: 450</h6>
+                          <h5 class="card-title">Diamond Earring</h5>
+                          <h6 class="card-title">A stunning piece of diamond</h6>
+                          <h6 class="card-title">Price: 350</h6>
                          <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                           
 
-                          </div></div></div>
+                          </div>
+                        </div>
+                      </div>
 
                           <div class="col-md-3">
                     <div class="card">
@@ -271,23 +194,27 @@
                           <div class="card-body">
                           <h5 class="card-title">Gold Earring</h5>
                           <h6 class="card-title">Stunning piece of jewelry</h6>
-                         <h6 class="card-title">Price: 299</h6>
-                        <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
+                         <h6 class="card-title">Price: 199</h6>
+                       <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                           
-                          </div></div></div>
+                          </div>
+                        </div>
+                      </div>
 
                           <div class="col-md-3">
                     <div class="card">
                         <img src="images/ear7.avif" class="card-img-top" alt="...">
                           <div class="card-body">
-                          <h5 class="card-title">Fancy Earring</h5>
-                          <h6 class="card-title">fancy stylish</h6>
-                          <h6 class="card-title">Price: 199</h6>
+                          <h5 class="card-title">Silver Earring</h5>
+                          <h6 class="card-title">Stunning piece of jewelry</h6>
+                          <h6 class="card-title">Price: 299</h6>
                           
-                           <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
+                          <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                          
 
-                          </div></div></div>
+                          </div>
+                        </div>
+                      </div>
 
                           <div class="col-md-3">
                     <div class="card">
@@ -296,17 +223,82 @@
                           <h5 class="card-title">Rose Gold Earring</h5>
                           <h6 class="card-title">Stunning piece of jewelry</h6>
                           <h6 class="card-title">Price: 299</h6>
-                        <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
+                         <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                          
 
-                          </div></div></div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div> 
+   </section> 
+    <!-- section 2 ends here  -->
 
-                          
+    <!-- section 3 starts here -->
+   <section class="pro">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/ear2.avif" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Diamond Earring</h5>
+                          <h6 class="card-title">A stunning piece of diamond</h6>
+                          <h6 class="card-title">Price: 350</h6>
+                         <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                           
 
-   </div></div> 
+                          </div>
+                        </div>
+                      </div>
+
+                          <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/ear10.avif" class="card-img-top" alt="...">
+                          <div class="card-body">
+                          <h5 class="card-title">Gold Earring</h5>
+                          <h6 class="card-title">Stunning piece of jewelry</h6>
+                         <h6 class="card-title">Price: 199</h6>
+                       <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
+                          
+                          </div>
+                        </div>
+                      </div>
+
+                          <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/ear13.avif" class="card-img-top" alt="...">
+                          <div class="card-body">
+                          <h5 class="card-title">Silver Earring</h5>
+                          <h6 class="card-title">Stunning piece of jewelry</h6>
+                          <h6 class="card-title">Price: 299</h6>
+                          
+                          <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
+                         
+
+                          </div>
+                        </div>
+                      </div>
+
+                          <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/ear12.avif" class="card-img-top" alt="...">
+                          <div class="card-body">
+                          <h5 class="card-title">Rose Gold Earring</h5>
+                          <h6 class="card-title">Stunning piece of jewelry</h6>
+                          <h6 class="card-title">Price: 299</h6>
+                         <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
+                         
+
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div> 
    </section>  
+   <!-- section 3 ends here  -->
 
+   <!-- section 4 starts here  -->
    <section class="pro">
         <div class="container mt-5">
             <div class="row">
@@ -320,7 +312,9 @@
                          <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                           
 
-                          </div></div></div>
+                          </div>
+                        </div>
+                      </div>
 
                           <div class="col-md-3">
                     <div class="card">
@@ -331,7 +325,9 @@
                          <h6 class="card-title">Price: 199</h6>
                        <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                           
-                          </div></div></div>
+                          </div>
+                        </div>
+                      </div>
 
                           <div class="col-md-3">
                     <div class="card">
@@ -344,7 +340,9 @@
                           <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                          
 
-                          </div></div></div>
+                          </div>
+                        </div>
+                      </div>
 
                           <div class="col-md-3">
                     <div class="card">
@@ -356,31 +354,16 @@
                          <button class="btn btn-secondary btn-sm buy-btn" onclick="buyNow(this)">Buy Now</button>
                          
 
-                          </div></div></div>
-                
-                          
-
-   </div></div> 
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div> 
    </section>  
-
+ <!-- section 4 ends here  -->
 </main>
-<body>
-  <script>
-function buyNow(btn){
 
-    btn.disabled = true;
-
-    btn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Loading`;
-
-    setTimeout(() => {
-        btn.innerHTML = "✔ Added";
-        btn.classList.remove("btn-secondary");
-        btn.classList.add("btn-success");
-
-        alert("🛒 Product added to cart!");
-    }, 2000);
-}
-</script>
+ <!-- footer starts here --> 
   <footer class="footer">
     <div class="container-fluid">
         <div class="row">
@@ -428,7 +411,24 @@ function buyNow(btn){
         </div>
     </div>
 </footer>
+<!-- footer ends here -->
 
+ <script>
+function buyNow(btn){
+
+    btn.disabled = true;
+
+    btn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Loading`;
+
+    setTimeout(() => {
+        btn.innerHTML = "✔ Added";
+        btn.classList.remove("btn-secondary");
+        btn.classList.add("btn-success");
+
+        alert("🛒 Product added to cart!");
+    }, 2000);
+}
+</script>
 <!-- Add Bootstrap JS and FontAwesome for Social Icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
